@@ -1,5 +1,4 @@
 ﻿using System;
-//using System.Linq;
 
 namespace _04_Pig_Latin
 {
@@ -47,6 +46,5 @@ namespace _04_Pig_Latin
                 return false;
             }
         }
-
     }
 }

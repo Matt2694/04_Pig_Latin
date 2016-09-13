@@ -3,11 +3,9 @@
 
 namespace _04_Pig_Latin
 {
-    internal class Translator
-    {
+    internal class Translator{
         const string EXTENSION = "ay";
-        internal string Translate(string v)
-        {
+        internal string Translate(string v){
             string moreWords = "";
             string[] words = v.Split(' ');
             for (int i = 0; i < words.Length; i++) {
@@ -15,17 +13,13 @@ namespace _04_Pig_Latin
             }
             return (moreWords.Trim(' '));
         }
-        internal string checkIfVowel(string w)
-        {
+        internal string checkIfVowel(string w){
             string fullWord = w;
             char[] Vowels = { 'a', 'e', 'i', 'o', 'u' };
             int i = 0;
-            if (!Contains(w[0], Vowels))
-            {
-                while (!Contains(w[i], Vowels))
-                {
-                    if(fullWord[0] == 'q')
-                    {
+            if (!Contains(w[0], Vowels)){
+                while (!Contains(w[i], Vowels)){
+                    if(fullWord[0] == 'q'){
                         i--;
                     }
                     char firstLetter = fullWord[0];
@@ -35,27 +29,21 @@ namespace _04_Pig_Latin
                 }
                 return fullWord + EXTENSION;
             }
-            else
-            {
+            else{
                 return fullWord + EXTENSION;
             }
         }
-        internal bool Contains(char v, char[] x)
-        {
+        internal bool Contains(char v, char[] x){
             int a = 0;
-            for(int i = 0; i < x.Length; i++)
-            {
-                if(v == x[i])
-                {
+            for(int i = 0; i < x.Length; i++){
+                if(v == x[i]){
                     a++;
                 }
             }
-            if(a > 0)
-            {
+            if(a > 0){
                 return true;
             }
-            else
-            {
+            else{
                 return false;
             }
         }

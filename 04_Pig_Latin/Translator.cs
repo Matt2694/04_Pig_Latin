@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+//using System.Linq;
 
 namespace _04_Pig_Latin
 {
@@ -20,9 +20,9 @@ namespace _04_Pig_Latin
             string fullWord = w;
             char[] Vowels = { 'a', 'e', 'i', 'o', 'u' };
             int i = 0;
-            if (!Vowels.Contains(w[0]))
+            if (!Contains(w[0], Vowels))
             {
-                while (!Vowels.Contains(w[i]))
+                while (!Contains(w[i], Vowels))
                 {
                     if(fullWord[0] == 'q')
                     {
@@ -37,7 +37,26 @@ namespace _04_Pig_Latin
             }
             else
             {
-                return (w + EXTENSION);
+                return fullWord + EXTENSION;
+            }
+        }
+        internal bool Contains(char v, char[] x)
+        {
+            int a = 0;
+            for(int i = 0; i < x.Length; i++)
+            {
+                if(v == x[i])
+                {
+                    a++;
+                }
+            }
+            if(a > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

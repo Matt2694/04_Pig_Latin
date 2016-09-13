@@ -1,19 +1,22 @@
 ﻿using System;
 
-namespace _04_Pig_Latin
-{
+namespace _04_Pig_Latin{
     internal class Translator{
         const string EXTENSION = "ay";
         internal string Translate(string v){
-            string moreWords = "";
+            string result;
+            string finalWords = "";
             string[] words = v.Split(' ');
             for (int i = 0; i < words.Length; i++) {
-                moreWords = moreWords + " " + checkIfVowel(words[i]);
+                finalWords += " " + checkIfVowel(words[i]);
             }
-            return (moreWords.Trim(' '));
+            result = finalWords.Trim(' ');
+            return result;
         }
         internal string checkIfVowel(string w){
-            string fullWord = w;
+            string result;
+            string baseWord;
+            string fullWord = baseWord = w;
             char[] Vowels = { 'a', 'e', 'i', 'o', 'u' };
             int i = 0;
             if (!Contains(w[0], Vowels)){
@@ -26,13 +29,15 @@ namespace _04_Pig_Latin
                     i++;
                     fullWord = restWord + firstLetter;
                 }
-                return fullWord + EXTENSION;
+                result = fullWord + EXTENSION;
             }
             else{
-                return fullWord + EXTENSION;
+                result = baseWord + EXTENSION;
             }
+            return result;
         }
         internal bool Contains(char v, char[] x){
+            bool result;
             int a = 0;
             for(int i = 0; i < x.Length; i++){
                 if(v == x[i]){
@@ -40,11 +45,12 @@ namespace _04_Pig_Latin
                 }
             }
             if(a > 0){
-                return true;
+                result = true;
             }
             else{
-                return false;
+                result = false;
             }
+            return result;
         }
     }
 }
